@@ -1,0 +1,22 @@
+{% extends "project_base.html" %}
+
+{% block content %}
+    {% for task in tasks %}
+      
+      
+      <div class="media border p-3" style = "border:2px solid gray; border-radius: 8%; width:80%; background-color: rgba(242, 242, 242,0.4) ;padding:20px" >
+        
+        <div class="media-body" style="position: relative;padding-left: 19%;">
+          <h1><a class="mr-2" href="." style="color:blue; width:auto; text-decoration: none;">{{ task.member_name }}</a></h1>
+          
+          <p class="article-content">{{ task.task }}</p>  
+           
+        </div>
+        <form action="#">
+            <input type="button" name="add">
+        </form>
+      </div>
+      
+        
+    {% endfor %}
+{% endblock content %}

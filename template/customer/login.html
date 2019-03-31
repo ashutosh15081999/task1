@@ -1,0 +1,21 @@
+{% extends "project_base.html" %}
+<!-- {% load crispy_forms_tags %} -->
+{% block content %}
+    <div class="content-section"style = "border:2px solid gray; border-radius: 8%; width:80%; background-color: rgba(242, 242, 242,0.4) ;padding:20px">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-primary" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-info">
+                <span style="color: black">Need An Account? </span><a class="ml-2" href="/customer/register/" style="color: red">Sign Up Now</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

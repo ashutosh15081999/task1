@@ -1,0 +1,19 @@
+{% extends "project_base.html" %}
+{% block content %}
+    {% for proj in liprojects %}
+      
+      
+      <div class="media border p-3" style = "border:2px solid gray; border-radius: 8%; width:80%; background-color: rgba(242, 242, 242,0.4) ;padding:20px" >
+        <!-- <img src = {{book.image.url}} alt = "booknahihai" class="rounded-circle" style="height: 200px; width: 200px;"> -->
+        <div class="media-body" style="position: relative;padding-left: 19%;">
+          <h1><a class="mr-2" href="{% url 'proj-content' proj.id %}" style="color:blue; width:autopx; text-decoration: none;">{{ proj.project_name }}</a></h1>
+          <!-- <small>{{ book.owner_name }}</small><small><i>Posted on {{ book.date }}</i></small> -->
+          <p class="article-content">{{ proj.comment }}</p>  
+          <!-- <h3>{{book.contact_no}}</h3>
+          <h2>{{book.price}}</h2> -->    
+        </div>
+      </div>
+      
+        
+    {% endfor %}
+{% endblock content %}
